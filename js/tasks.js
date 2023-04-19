@@ -3,9 +3,7 @@ const createElementForm = document.querySelector("#create_cup");
 const createElementFormBtn = document.querySelector("#create_element_btn");
 const createElementModale = document.querySelector("#staticBackdrop");
 const createElementModaleTitle = document.querySelector("#staticBackdropLabel");
-const createElementOpenModelBtn = document.querySelector(
-  ".btn-primary.nav-link"
-);
+const createElementOpenModelBtn = document.querySelector(".btn-primary.nav-link");
 const volumeValue = document.querySelector(".main-side-menu_value");
 const countVolumeBtn = document.querySelector(".main-side-menu__count-button");
 const editElementModalBtn = document.querySelector("#edite_element_btn");
@@ -61,15 +59,17 @@ sortByValueCheckbox.addEventListener("change", sortByValue);
 
 searchBtn.addEventListener("click", searchByName);
 
+searchBtnCansel.addEventListener("click",(event)=>{
+  event.preventDefault();
+  elementsContainer.innerText = "";
+  renderElementsGrid();
+})
+
 createElementOpenModelBtn.addEventListener("click", () => {
   createElementModaleTitle.innerText = "Add cap";
   createElementFormBtn.style.display = "block";
   editElementModalBtn.style.display = "none";
   clearForm();
-});
-
-searchBtnCansel.addEventListener("click", () => {
-  renderElementsGrid();
 });
 
 function addNewElem(event) {
