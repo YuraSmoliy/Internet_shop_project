@@ -49,7 +49,7 @@ let elements = [
   },
 ];
 
-// function setDataToChannelStore() {
-//   localStorage.setItem("cups", JSON.stringify(elements));
-// }
-// setDataToChannelStore();
+function setDataToChannelStore() {
+  localStorage.setItem("cups", JSON.stringify(elements));
+}
+setDataToChannelStore();
